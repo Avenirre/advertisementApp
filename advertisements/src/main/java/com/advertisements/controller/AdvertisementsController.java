@@ -28,12 +28,12 @@ public class AdvertisementsController {
 		return publishingService.publish(advertisement);
 	}
 	
-	@GetMapping("/search/topic/{name}")
+	@GetMapping("/topic/{name}")
 	List<Advertisement> getByTopic(@PathVariable("name") String name) {
 		return searchService.getByTopic(name);
 	}
 	
-	@GetMapping("/search/titleOrDescriptionPart/{name}")
+	@GetMapping("/titleOrDescriptionPart/{name}")
 	List<Advertisement> getByTitle(@PathVariable("name") String name) {
 		return searchService.getByTitleOrDescriptionPart(name);
 	}

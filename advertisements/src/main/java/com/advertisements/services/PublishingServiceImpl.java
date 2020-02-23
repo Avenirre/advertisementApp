@@ -15,11 +15,15 @@ public class PublishingServiceImpl implements PublishingService {
 
 	@Override
 	public Status publish(Advertisement advertisement) {
+		if (advertisement.getTitle().length() == 0 || advertisement.getDescription().length() == 0 || 
+				advertisement.getTopic().length() == 0) {
+			return Status.INVALID_ADVERTISEMENT_FORMAT;
+		}
 		if(advertisements.existsById(advertisement.getTitle())) {
 			return Status.ADVERTISEMENT_EXISTS;
 		}
 		advertisements.save(new AdvertisementDAO(advertisement));
-		return Status.SUCCESS;
+		return Status.ADVERTISEMENT_ADDED_SUCCESSFULLY;
 	}
 
 }
