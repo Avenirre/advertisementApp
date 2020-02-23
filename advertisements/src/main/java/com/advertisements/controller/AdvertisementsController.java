@@ -1,7 +1,6 @@
 package com.advertisements.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +12,6 @@ import com.advertisements.dto.Advertisement;
 import com.advertisements.services.PublishingService;
 import com.advertisements.services.SearchService;
 import com.advertisements.utils.Status;
-@SpringBootApplication
 @RestController
 @EnableMongoRepositories("com.advertisements.repo")
 public class AdvertisementsController {
