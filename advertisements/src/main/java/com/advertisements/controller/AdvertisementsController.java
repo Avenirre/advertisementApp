@@ -41,6 +41,4 @@ public class AdvertisementsController {
 	Status getByDescription(@PathVariable("name") String name) {
 		return searchService.getByDescription(name);
 	}
-	
-
 }
