@@ -3,6 +3,7 @@ package com.advertisements.entities;
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.advertisements.dto.Advertisement;
@@ -13,6 +14,8 @@ public class AdvertisementDAO {
 	private String description;
 	private String topic;
 	private LocalDate timestamp;
+	@Version
+	private Long version;
 	
 	public AdvertisementDAO() {}
 	
