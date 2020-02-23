@@ -1,5 +1,7 @@
 package com.advertisements.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,7 @@ public class AdvertisementsController {
 	
 	@Autowired
 	PublishingService publishingService;
+	@Autowired
 	SearchService searchService;
 	
 	@PostMapping("/publish")
@@ -26,17 +29,12 @@ public class AdvertisementsController {
 	}
 	
 	@GetMapping("/search/topic/{name}")
-	Status getByTopic(@PathVariable("name") String name) {
+	List<Advertisement> getByTopic(@PathVariable("name") String name) {
 		return searchService.getByTopic(name);
 	}
 	
-	@GetMapping("/search/title/{name}")
-	Status getByTitle(@PathVariable("name") String name) {
-		return searchService.getByTitle(name);
-	}
-	
-	@GetMapping("/search/description/{name}")
-	Status getByDescription(@PathVariable("name") String name) {
-		return searchService.getByDescription(name);
+	@GetMapping("/search/titleOrDescriptionPart/{name}")
+	List<Advertisement> getByTitle(@PathVariable("name") String name) {
+		return searchService.getByTitleOrDescriptionPart(name);
 	}
 }

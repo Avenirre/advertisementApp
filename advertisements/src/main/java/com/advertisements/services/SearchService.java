@@ -1,15 +1,12 @@
 package com.advertisements.services;
 
-import com.advertisements.utils.Status;
+import java.util.List;
+
+import com.advertisements.dto.Advertisement;
 
 public interface SearchService {
 
-	Status getByTopic(String name);
+	List<Advertisement> getByTopic(String name);
 
-	Status getByTitle(String name);
-
-	Status getByDescription(String name);
-
-	
-
+	List<Advertisement> getByTitleOrDescriptionPart(String name);
 }

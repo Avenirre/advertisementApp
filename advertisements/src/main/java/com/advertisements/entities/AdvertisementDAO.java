@@ -54,4 +54,8 @@ public class AdvertisementDAO {
 	public void setTimestamp(LocalDate timestamp) {
 		this.timestamp = timestamp;
 	}
+	
+	public Advertisement getAdvertisement() {
+		return new Advertisement(title, description, topic, timestamp);
+	}
 }
