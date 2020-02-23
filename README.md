@@ -1,7 +1,4 @@
-# PHP Assumptions
-[![Build Status](https://scrutinizer-ci.com/g/rskuipers/php-assumptions/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rskuipers/php-assumptions/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rskuipers/php-assumptions/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rskuipers/php-assumptions/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/rskuipers/php-assumptions/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/rskuipers/php-assumptions/?branch=master)
+# Advertisement Application
 
 ## Setup
 ```sh
