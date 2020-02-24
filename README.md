@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The advertisement application allows the user to add (publish) new advertisements(Advertisement object includes 4 fields - 3 String type: title, description, topic + one filed LocalDate type(timestamp)) and find existing ones by two ways:
+The advertisement application allows users to add (publish) new advertisements(Advertisement object includes 4 fields - 3 String type: title, description, topic + one LocalDate type field(timestamp)) and find existing ones by two ways:
 1. Using a topic name
 2. Using words that advertisement title or description are consisted of.
 
@@ -24,24 +24,15 @@ During publishing the JSON in the body should be sent, see example below:
 }
 ```
 
-Running `bin/phpa` on this file would yield the following output:
+In case of successful publication the next reply will be received:
 
 ```
-----------------------------------------------
-| file        | line | message               |
-==============================================
-| example.php | 3    | if ($user !== null) { |
-----------------------------------------------
-
-1 out of 1 boolean expressions are assumptions (100%)
+"ADVERTISEMENT_ADDED_SUCCESSFULLY"
 ```
+Otherwise, if the advertisement with the same title has already existed:
 
-This is an example of an **assertion**:
-
-```php
-if ($user instanceof User) {
-    $user->logout();
-}
+```
+"ADVERTISEMENT_EXISTS"
 ```
 
 ## Tests
