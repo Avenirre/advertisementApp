@@ -6,6 +6,11 @@ The advertisement application allows users to add (publish) new advertisements(A
 1. Using a topic name
 2. Using words that advertisement title or description are consisted of.
 
+## settings.properties
+
+```
+spring.data.mongodb.uri=mongodb://user:qwerty123456@ds057857.mlab.com:57857/advertisements?retryWrites=false
+```
 
 ## API
 Publish(POST)
