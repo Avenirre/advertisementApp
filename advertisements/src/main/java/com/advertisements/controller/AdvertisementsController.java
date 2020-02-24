@@ -33,8 +33,8 @@ public class AdvertisementsController {
 		return searchService.getByTopic(name);
 	}
 	
-	@GetMapping("/titleOrDescriptionPart/{name}")
-	List<Advertisement> getByTitle(@PathVariable("name") String name) {
-		return searchService.getByTitleOrDescriptionPart(name);
+	@GetMapping("/titleOrDescriptionPart/{word}")
+	List<Advertisement> getByTitle(@PathVariable("word") String word) {
+		return searchService.getByTitleOrDescriptionPart(word);
 	}
 }
