@@ -1,8 +1,10 @@
 # Advertisement Application
 
-## Setup
+## Introduction
 ```sh
-$ composer require --dev rskuipers/php-assumptions
+The advertisement application allows the user to add (publish) new advertisements(Advertisement object includes 4 fields - 3 String type: title, description, topic + one filed LocalDate type(timestamp)) and find existing ones by two ways:
+1. Using a topic name
+2. Using words that advertisement title or description are consisted of.
 ```
 
 ## Introduction
