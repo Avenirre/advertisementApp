@@ -8,8 +8,7 @@ The advertisement application allows users to add (publish) new advertisements(A
 
 
 ## API
-Publish
-Method POST
+Publish(POST)
 
 http://localhost:8080/publish
 
@@ -34,6 +33,51 @@ Otherwise, if the advertisement with the same title has already existed:
 ```
 "ADVERTISEMENT_EXISTS"
 ```
+Or if the advertisement format is invalid (fir example it includes empty fields value/s):
+
+```
+"INVALID_ADVERTISEMENT_FORMAT"
+```
+
+findByTopic(GET)
+
+http://localhost:8080/topic/{topicName}
+
+findByTopic(GET)
+
+http://localhost:8080/titleOrDescriptionPart/{word}
+* word - the part of the title or the description 
+
+If some advertisements are found the next reply will be received:
+
+```
+[
+    {
+        "title": "3",
+        "description": "advertisement1",
+        "topic": "test",
+        "timestamp": "2020-02-24"
+    },
+    {
+        "title": "2",
+        "description": "advertisement1",
+        "topic": "test",
+        "timestamp": "2020-02-24"
+    },
+    {
+        "title": "1",
+        "description": "advertisement1",
+        "topic": "test",
+        "timestamp": "2020-02-24"
+    }
+]
+```
+Otherwise, the empty list returns:
+
+```
+"[]"
+```
+
 
 ## Tests
 This project is built with [PHPUnit](https://github.com/sebastianbergmann/phpunit) and [Prophecy](https://github.com/phpspec/prophecy-phpunit).
