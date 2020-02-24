@@ -11,6 +11,8 @@ public interface AdvertisementRepository extends MongoRepository<AdvertisementDA
 
 	Stream<AdvertisementDAO> findByTopic(String name);
 	
-	@Query(value = "{ $or: [ { 'title' : {$regex:?0, $options:'i'} }, { 'description' : {$regex:?0,$options:'i'} } ] }")
-	Stream<AdvertisementDAO> findByTitleOrDescriptionPart(String regexp);
+	
+	//@Query(value = "{ $or: [ { 'title' : {$regex:?0, $options:'i'} }, { 'description' : {$regex:?0,$options:'i'} } ] }")
+	@Query(value = "{ $text: {$search: ?0}}")
+	Stream<AdvertisementDAO> findByTitleOrDescriptionPart(String word);
 }
