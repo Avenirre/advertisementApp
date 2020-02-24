@@ -80,10 +80,17 @@ Otherwise, the empty list returns:
 
 
 ## Tests
-This project is built with [PHPUnit](https://github.com/sebastianbergmann/phpunit) and [Prophecy](https://github.com/phpspec/prophecy-phpunit).
-In order to run these tests make sure you have dev dependencies installed with composer.
+This project is tested with JUnit5 and Postman.
 
-Running PHPUnit:
-```sh
-$ ./vendor/bin/phpunit
+## Scalability
+
+1.The additional field "version" with @Version annotation is added to AdvertisementDAO class. Now we can use try-catch block for OptimisticLockingFailureException that is thrown if some servers try to alter the document concurrently. So invalid operations will be rolled back and repeated. This approach is not actual for current API but just if we add some updating documents methods and increase servers number.
+
+2. The text indexes is added to such fields as "topic" and "title"+"description"(compound) for perfomance increasing in the case of adding new requests using the commands:
+
 ```
+db.advertisements.createIndex({"topic": "text"})
+db.advertisements.createIndex({"title": "text", "description": "text"})
+```
+
+
