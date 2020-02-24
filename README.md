@@ -33,7 +33,7 @@ Otherwise, if the advertisement with the same title has already existed:
 ```
 "ADVERTISEMENT_EXISTS"
 ```
-Or if the advertisement format is invalid (fir example it includes empty fields value/s):
+Or, if the advertisement format is invalid (for example, it includes empty fields value/s):
 
 ```
 "INVALID_ADVERTISEMENT_FORMAT"
