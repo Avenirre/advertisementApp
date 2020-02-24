@@ -86,11 +86,19 @@ This project is tested with JUnit5 and Postman.
 
 1.The additional field "version" with @Version annotation is added to AdvertisementDAO class. Now we can use try-catch block for OptimisticLockingFailureException that is thrown if some servers try to alter the document concurrently. So invalid operations will be rolled back and repeated. This approach is not actual for current API but just if we add some updating documents methods and increase servers number.
 
-2. The text indexes is added to such fields as "topic" and "title"+"description"(compound) for perfomance increasing in the case of adding new requests using the commands:
+2. The text indexes is added to such fields as "topic" and "title"+"description"(compound) for perfomance increasing in the case of adding new requests using the commands(DO IT BEFORE THE FIRST SEARCH QUERY LAUNCH TO AVOID ERRORS):
 
 ```
 db.advertisements.createIndex({"topic": "text"})
 db.advertisements.createIndex({"title": "text", "description": "text"})
 ```
+
+3. The next step is sharding using.
+
+## Possible improvements
+
+1. It is possible to add optional long type parameter for GET statistics requests restricting the number of returned documents. If the parameter is not passed it should be use the default value from settings.properties.
+2. Limit-offset approach
+
 
 
