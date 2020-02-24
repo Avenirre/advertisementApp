@@ -7,15 +7,20 @@ The advertisement application allows the user to add (publish) new advertisement
 2. Using words that advertisement title or description are consisted of.
 
 
-## Introduction
-PHP Assumptions is the result of a proof of concept inspired by the "[From assumptions to assertions](http://rskuipers.com/entry/from-assumptions-to-assertions)" blog post.
-It's a static code analysis tool doing checks for weak assumptions.
+## API
+Publish
+Method POST
 
-This is an example of an **assumption**:
+http://localhost:8080/publish
 
-```php
-if ($user !== null) {
-    $user->logout();
+During publishing the JSON in the body should be sent, see example below:
+
+```
+{
+	"title": "7",
+	"description": "newAdvertisement",
+	"topic": "new",
+	"timestamp": "2020-02-24T14:45:15"
 }
 ```
 
