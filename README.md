@@ -1,11 +1,11 @@
 # Advertisement Application
 
 ## Introduction
-```sh
+
 The advertisement application allows the user to add (publish) new advertisements(Advertisement object includes 4 fields - 3 String type: title, description, topic + one filed LocalDate type(timestamp)) and find existing ones by two ways:
 1. Using a topic name
 2. Using words that advertisement title or description are consisted of.
-```
+
 
 ## Introduction
 PHP Assumptions is the result of a proof of concept inspired by the "[From assumptions to assertions](http://rskuipers.com/entry/from-assumptions-to-assertions)" blog post.
